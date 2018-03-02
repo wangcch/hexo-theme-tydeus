@@ -1,0 +1,62 @@
+#page-nav
+  text-align: center
+  @media mq-xs
+    overflow: hidden
+    .space
+      display: none
+    .next
+      float: right
+    .prev
+      float: left
+  .page-number
+    background: #fff
+    padding: 5px 10px
+    margin: 0 5px
+    font-size: 12px
+    border: 1px solid transparent
+    &:hover
+      border-color: color-border
+    @media mq-xs
+      display: none
+  .current
+    border-color: color-border
+  .extend
+    background: #fff
+    padding: 5px 10px;
+    font-size: 12px
+    border: 1px solid transparent
+    @media mq-xs
+      padding: 10px 15px
+  
+.archives-wrap
+  .archive-year-wrap
+    font-size: 20px
+    font-weight: bold
+    padding-bottom: 10px
+    margin-bottom: 15px
+    border-bottom: 1px solid color-border
+
+#main
+  .archives
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    flex-wrap: wrap
+    .archive-article
+      width: 48%
+      padding: 5px 10px
+      @media mq-xs
+        width: 100%
+        margin-bottom: 15px
+      time
+        color: #888888
+      h1
+        font-size: 16px
+        margin: 5px 0
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @media mq-xs
+          font-size: 14px
+          a
+            display: block

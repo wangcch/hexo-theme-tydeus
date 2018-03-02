@@ -1,0 +1,66 @@
+@import "_variables";
+// @import "_util/mixin";
+// @import "_util/grid"
+@import "_extend";  
+@import "base/bootstrap.min.css"
+
+
+html, body, #container
+  height: 100%
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  background: #f8f8f8
+
+#wrap
+  overflow: hidden
+  float: none
+  margin: 0 auto
+  padding: 0
+
+#header
+  position: fixed
+  top: 50%
+  transform: translateY(-50%)
+  text-align: right
+  @media mq-xs
+    position: relative
+    top: 0
+    transform: none;
+    text-align: center;
+
+#main
+  // width: 100%
+  padding: 30px 0;
+  // max-width: 960px;
+  @media mq-xs
+    float: none
+
+#footer-mp
+  text-align: center
+  margin-bottom: 15px
+
+a
+  color: #333
+
+li
+  list-style-type: none
+
+blockquote
+  font-size: 12px
+
+.head-img
+    display: inline-block
+    width: 50px
+    height: 50px
+    margin-top: 50px
+    background: url('../head.jpg') no-repeat
+    background-size: cover
+    border: 1px solid color-border
+    overflow: hidden
+
+@import "_partial/article"
+@import "_partial/footer"
+@import "_partial/header"
+@import "_partial/archive"
+@import "_partial/highlight" 
+
+  

@@ -1,0 +1,22 @@
+<%- partial('_partial/head') %>
+<body>
+  <div id="container">
+    <div id="wrap" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+      <div class="pull-right col-lg-8 col-md-8 col-sm-8 col-xs-12 flex-center">
+        <section id="main" class="col-lg-10 col-md-8 col-sm-12 col-xs-12"><%- body %></section>
+      </div>
+      <div id="footer-mp" class="hidden-lg hidden-md hidden-sm">
+        <div class="head-img"></div>
+        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+    <!-- <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+      <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+    <% } %> -->
+    <!-- <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %> -->
+    <%- partial('_partial/after-footer') %>
+  </div>
+</body>
+</html>

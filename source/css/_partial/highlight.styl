@@ -1,0 +1,32 @@
+#article-md
+  width: 100%
+  h1
+    font-size: 20px
+    font-weight: bold
+  h2
+    font-size: 18px
+    font-weight: bold
+    position: relative
+    margin-left: 30px
+    &:after
+      content: '#'
+      position: absolute
+      top: 0
+      left: -20px
+      color: #888888
+  h3, h4, h5, h6
+    font-size: 16px
+    font-weight: bold
+  .highlight
+    width: 100%
+    overflow-x: auto
+    table
+      width: 100%
+      .gutter pre
+        padding: 10px 5px
+        border-radius: 3px 0 0 3px
+        border-width: 1px 0 1px 1px
+        color: rgba(#000, 0.5)
+      .code pre
+          padding: 10px
+          border-radius: 0 3px 3px 0
