@@ -1,7 +1,7 @@
 <header id="header" class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
   <div class="head-mp hidden-lg hidden-md hidden-sm">
     <h1><a href="<%- url_for() %>"><%= config.demon %>'Blog</a></h1>
-    <div class="head-nav-toggle">M</div>
+    <div class="head-nav-toggle fas fa-bars">M</div>
   </div>
   <h1 class="hidden-xs"><a href="<%- url_for() %>"><%= config.demon %>'Blog</a></h1>
   <p class="intro"><%= theme.subtitle %></p>
@@ -23,7 +23,6 @@ var $navlist = document.querySelector('#head-nav');
 
 $toggle.addEventListener('click', function(e){
   if ($navlist.className.indexOf('head-navlist') > 0) {
-    console.log('if');
     $navlist.className = " ";
     setTimeout(function(){
       if($navlist.className.indexOf('head-navlist') < 0) {
@@ -31,7 +30,6 @@ $toggle.addEventListener('click', function(e){
       }
     },400)
   }else{
-    console.log('else')
     $navlist.style.height = "auto"
     $navlist.className += " head-navlist";
   }

@@ -2,6 +2,11 @@
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
+<% } else if (pagination == 3){ %>
+  <%- partial('_widget/tagcloud') %>
+  <%- partial('_widget/category') %>
+<% } else if (pagination == 5){ %>
+  <%- partial('_widget/gallery') %>
 <% } else { %>
   <% var last; %>
   <% page.posts.each(function(post, i){ %>

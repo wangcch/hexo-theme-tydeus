@@ -2,8 +2,8 @@
 menu:
   Home: /
   Archives: /archives
-  # About: /about
-  # Gallery: /gallery
+  Induction: /induction
+  Gallery: /gallery
 rss: /atom.xml
 
 # Content
@@ -11,16 +11,16 @@ excerpt_link: Read More
 fancybox: true
 
 # Sidebar
-sidebar: left
-widgets:
-- category
-- tag
-- tagcloud
-- archive
-- recent_posts
+# sidebar: left
+# widgets:
+# - category
+# - tag
+# - tagcloud
+# - archive
+# - recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
-index_widgets:
+# index_widgets:
 # - category
 # - tagcloud
 # - archive
