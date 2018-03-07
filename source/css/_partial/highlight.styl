@@ -1,3 +1,21 @@
+$highlight-background   = #f8f8f8
+$highlight-current-line = #efefef
+$highlight-selection    = #d6d6d6
+$highlight-foreground   = #4d4d4c
+$highlight-comment      = #8e908c
+$highlight-red          = #c82829
+$highlight-orange       = #f5871f
+$highlight-yellow       = #eab700
+$highlight-green        = #718c00
+$highlight-aqua         = #3e999f
+$highlight-blue         = #4271ae
+$highlight-purple       = #8959a8
+$highlight-gutter       = {
+  color: #869194,
+  bg-color: #eff2f3
+}
+$highlight-deletion     = #fdd
+$highlight-addition     = #dfd
 #article-md
   width: 100%
   a
@@ -20,15 +38,194 @@
     font-size: 16px
     font-weight: bold
   .highlight
+    position: relative
+    padding-top: 20px
+  .js:after, .css:after, .sass:after, .scss:after, .html:after
+    position: absolute
+    right: 10px
+    top: 5px
+    color: #ccc
+  .js:after
+    content: 'js'
+  .css:after
+    content: 'css'
+  .sass:after
+    content: 'sass'
+  .scss:after
+    content: 'scss'
+  .html:after
+    content: 'html'
+    
+    
+
+$code-block {
+  overflow: auto;
+  margin: 20px 0;
+  padding: 0;
+  font-size $code-font-size;
+  color: $highlight-foreground;
+  background: $highlight-background;
+  line-height: $line-height-code-block;
+}
+
+pre, code { font-family: $code-font-family; }
+
+code {
+  padding: 2px 4px;
+  word-wrap: break-word;
+  color: $code-foreground;
+  background: $code-background;
+  border-radius: $code-border-radius;
+  font-size $code-font-size;
+}
+
+pre {
+  @extend $code-block;
+  padding: 10px;
+
+  code {
+    padding: 0;
+    color: $highlight-foreground;
+    background: none;
+    text-shadow: none;
+  }
+}
+
+.highlight {
+  @extend $code-block;
+  border-radius: 1px
+
+  pre {
+    border: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  table {
+    margin: 0;
+    width: auto;
+    border: none;
+  }
+
+  td {
+    border: none;
+    padding: 0;
+  }
+
+  figcaption {
+    clearfix();
+    font-size: 1em;
+    color: $highlight-foreground;
+    line-height: 1em;
+    margin-bottom: 1em;
+
+    a {
+      float: right;
+      color: $highlight-foreground;
+
+      &:hover { border-bottom-color: $highlight-foreground; }
+    }
+  }
+
+  .gutter pre {
+    padding-left: 10px
+    padding-right: 10px
+    color: $highlight-gutter.color
+    text-align: right
+    background-color: $highlight-gutter.bg-color
+  }
+
+  .code pre {
     width: 100%
-    overflow-x: auto
-    table
-      width: 100%
-      .gutter pre
-        padding: 10px 5px
-        border-radius: 3px 0 0 3px
-        border-width: 1px 0 1px 1px
-        color: rgba(#000, 0.5)
-      .code pre
-          padding: 10px
-          border-radius: 0 3px 3px 0
+    padding-left: 10px
+    padding-right: 10px
+    background-color: $highlight-background
+  }
+
+  .line { height: 20px; }
+}
+
+
+.gutter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.gist table {
+  width: auto;
+
+  td { border: none; }
+}
+
+// For diff highlight
+pre .deletion { background: $highlight-deletion; }
+pre .addition { background: $highlight-addition; }
+pre .meta     { color: $highlight-purple; }
+
+pre {
+
+  .comment { color: $highlight-comment; }
+
+  .variable
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo {
+    color: $highlight-red;
+  }
+
+  .number
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+  .command {
+    color: $highlight-orange;
+  }
+
+  .ruby .class .title
+  .css .rules .attribute
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+  .special
+  .number
+  .formula {
+    color: $highlight-green;
+  }
+
+  .title
+  .css .hexcolor {
+    color: $highlight-aqua;
+  }
+
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title {
+    color: $highlight-blue;
+  }
+
+  .keyword
+  .javascript .function {
+    color: $highlight-purple;
+  }
+
+}

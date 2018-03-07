@@ -11,7 +11,23 @@
     padding: 10px 0
     margin-bottom: 15px
     border-bottom: 1px solid color-border
-  .tagcloud a
-    padding: 5px
+  .tagcloud
+    a
+      padding: 5px
+      &:hover
+        text-decoration: none;
+        box-shadow: 0 2px 5px rgba(#000, 0.2)
+        transition: all 0.3s
   .category-list
     padding: 0
+    ul
+      padding: 0
+    li
+      padding: 5px 10px
+      background: rgba(#000, 0.02)
+      a
+        display: block
+        &:hover
+          text-decoration: none 
+          padding-left: 10px
+          transition: all 0.3s

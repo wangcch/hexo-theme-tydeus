@@ -3,7 +3,7 @@ menu:
   Home: /
   Archives: /archives
   Induction: /induction
-  # Gallery: /gallery
+  Gallery: /gallery
 rss: /atom.xml
 
 # Content
