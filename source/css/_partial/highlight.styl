@@ -55,8 +55,34 @@ $highlight-addition     = #dfd
     content: 'scss'
   .html:after
     content: 'html'
-    
-    
+  table
+    border: 1px solid #f8f8f8
+    width: 100%
+    thead
+      background: #eeeeee
+      th
+        padding: 5px
+        border-left: 1px solid #f8f8f8
+        &:first-child
+          border: none
+    tbody
+      tr
+        border-top: 1px solid #eeeeee
+        &:first-child
+          border: none
+      td 
+        padding: 5px
+        border-left: 1px solid #eeeeee
+        &:first-child
+          border: none
+  ol
+    list-style-type: none
+    counter-reset: li
+    padding-left: 16px
+    li
+      &:before
+        content: counter(li)'. '
+        counter-increment: li
 
 $code-block {
   overflow: auto;
@@ -105,6 +131,15 @@ pre {
     margin: 0;
     width: auto;
     border: none;
+    .gutter {
+      padding: 0 !important;
+      border: none !important;
+      width: 28px;
+    }
+    .code {
+      padding: 0 !important;
+      border: none !important;
+    }
   }
 
   td {
