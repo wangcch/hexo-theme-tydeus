@@ -1,0 +1,58 @@
+.widget-gallery
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+  @media mq-lg
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  @media mq-xs
+    -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+  .gallery-card
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: block;
+    // a
+    //   text-decoration: none;
+    &:hover
+      box-shadow: 0 5px 20px rgba(#000, 0.1);
+      // h2
+      //   transform: translateY(0)
+      // p
+      //   transform: translateY(-100%)
+    // @media mq-lg
+    //   width: 48%;
+    @media mq-xs
+      width: 100%;
+      margin: 0 0 15px 0;
+    img
+      width: 100%;
+    h2
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 5px 15px;
+      font-size: 12px;
+      background: linear-gradient(to top, rgba(#000, 0.3), rgba(#fff, 0));
+      color: rgba(#fff, 0.6)
+      transition: all 0.3s;
+    p
+      position: absolute;
+      padding: 5px 15px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba(#000, 0.3), rgba(#fff, 0));
+      color: rgba(#fff, 0.6)
+      transition: all 0.3s;

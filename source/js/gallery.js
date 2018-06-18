@@ -1,44 +1,39 @@
-gallery = {
-    page: 1,
-    offset: 20,
+$(document).ready(function () {
+    gallery = {
+        init: function () {
+            var that = this;
+            $.getJSON("/gallery/output.js", function (data) {
+                that.render(data);
+            });
+        },
+    
+        render: function (data) {
+            var html, li = "<div id='demonLightgallery'>";
+            for (var index in data) {
+                li += '<div class="gallery-card animated fadeInUp" data-src="' + data[index].url + '" data-sub-html="<h5>' + data[index].title + '</h5><p>' + data[index].date + '</p>' +
+                    '<a href="' + data[index].url + '" class="lazyload">' +
+                    // '<img class="lazyload" src="' + data[index].url + '" alt="" />' +
+                    '<img class="lazyload" data-original="' + data[index].url + '" alt=""/>' +
+                    // '<h2>' + data[index].title + '</h2>' +
+                    '<p>' + data[index].title + '</p>' +
+                    '</a></div>';
+            }
+            li += '</div>'
+            $(".widget-gallery").append(li);
+            $("img.lazyload").lazyload();
+            $("#demonLightgallery").lightGallery({
+                // thumbnail: true
+            });
+            
 
-    init: function () {
-        var that = this;
-        console.log('demo');        
-        $.getJSON("/gallery/output.json", function (data) {
-            that.render(that.page, data);
-            console.log('demo');
-        });
-    },
-
-    render: function (page, data) {
-        var begin = (page - 1) * this.offset;
-        var end = page * this.offset;
-        if (begin >= data.length) return;
-        var html, li = "";
-        for (var i = begin; i < end && i < data.length; i++) {
-            li += '<li><div class="card">' +
-                '<a class="img-bg" rel="example_group" href="https://github.com/wangcch/hexoBlog/blob/master/gallery/' + data[i] + '?raw=true"></a>' +
-                '<img lazy-src="https://github.com/wangcch/hexoBlog/blob/master/gallery/' + data[i] + '?raw=true" />' +
-                '</li>';
+            // setTimeout(function () {
+            //     $('.widget-gallery').masonry({
+            //         itemSelector: '.gallery-card',
+            //         columnWidth: '.gallery-card'
+            //     });
+            // }, 200)
         }
-        $(".ImageGrid").append(li);
-        $(".ImageGrid").lazyload();
-        // $("a[rel=example_group]").fancybox();
-        this.minigrid();
-    },
-
-    minigrid: function() {
-        var grid = new Minigrid({
-            container: '.ImageGrid',
-            item: '.card',
-            gutter: 12
-        });
-        grid.mount();
-        $(window).resize(function() {
-           grid.mount();
-        });
     }
-}
-
-gallery.init();
+    
+    gallery.init();
+})
